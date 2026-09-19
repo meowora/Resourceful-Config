@@ -17,6 +17,7 @@ import net.minecraft.client.input.PreeditEvent;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Vector2i;
 
 public class MultilineTextBox extends BaseWidget {
@@ -29,7 +30,7 @@ public class MultilineTextBox extends BaseWidget {
     private double scroll = - 1;
     private int lastHeight;
     private boolean scrollbarHovered = false;
-    private @org.jspecify.annotations.Nullable IMEPreeditOverlay preeditOverlay;
+    private @Nullable IMEPreeditOverlay preeditOverlay;
     private final Vector2i cursor = new Vector2i();
 
     public MultilineTextBox(State<String> state) {
@@ -139,7 +140,7 @@ public class MultilineTextBox extends BaseWidget {
 
 
     @Override
-    public boolean preeditUpdated(@org.jspecify.annotations.Nullable PreeditEvent event) {
+    public boolean preeditUpdated(@Nullable PreeditEvent event) {
         this.preeditOverlay = event != null ? new IMEPreeditOverlay(event, this.font, 9 + 1) : null;
         return true;
     }

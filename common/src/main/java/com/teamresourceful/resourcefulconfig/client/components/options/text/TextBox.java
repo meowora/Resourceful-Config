@@ -31,7 +31,7 @@ public class TextBox extends BaseWidget {
     private int displayPos;
     private int cursorPos;
     private int highlightPos;
-    private @org.jspecify.annotations.Nullable IMEPreeditOverlay preeditOverlay;
+    private @Nullable IMEPreeditOverlay preeditOverlay;
 
     protected int placeholderColor = -1;
     protected String placeholder = "";
